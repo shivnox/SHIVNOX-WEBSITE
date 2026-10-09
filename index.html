@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SHIVNOX | Practical AI Automation for Business</title>
+<meta name="description" content="SHIVNOX helps businesses streamline repetitive workflows with practical AI and no-code automation for lead management, data processing, reporting, and operations.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SHIVNOX | Practical AI Automation for Business">
+<meta property="og:description" content="Practical AI and no-code automation for lead management, data processing, reporting, and operations.">
+<link rel="icon" href="assets/mark-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e9ebed;--ink:#101418;--lime:#9fe000;--mute:#5b6470;--serif:"Playfair Display","Didot","Bodoni 72",Georgia,serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;overflow-x:hidden}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{margin:0 0 .5em;line-height:1.05}
+h1,h2{font-family:var(--serif);font-weight:800;letter-spacing:-.035em}
+h2{font-size:clamp(2rem,4.6vw,3.4rem)}
+h3{font-size:1.1rem;letter-spacing:-.01em}
+p{margin:0 0 1em}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+section{padding:84px 0}
+.mute{color:var(--mute)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:999px;background:var(--ink);color:#fff;font-weight:650;text-decoration:none;font-size:.95rem;border:0;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{background:#2a323c;transform:translateY(-2px)}
+header{position:relative;z-index:40}
+.bar{display:flex;align-items:center;justify-content:space-between;height:96px;gap:16px}
+.bar .logo img{height:46px;width:auto}
+.nav{display:flex;align-items:center;gap:36px}
+.nav a:not(.btn){font-size:.78rem;font-weight:650;letter-spacing:.14em;text-transform:uppercase;color:#4d5661;text-decoration:none}
+.nav a:not(.btn):hover{color:var(--ink)}
+.nav .btn{min-height:42px;padding:0 20px;font-size:.85rem}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:0;background:var(--ink);cursor:pointer}
+.burger span{display:block;width:18px;height:2px;background:#fff;margin:4px auto}
+.hero{position:relative;margin-top:140px;border-radius:20px;background:linear-gradient(180deg,#a8e800,#8bd100);text-align:center;padding:200px 28px 110px}
+.fan{position:absolute;top:-135px;left:0;right:0;display:flex;justify-content:center;padding:0 3%}
+.pc{flex:0 1 150px;min-width:0;margin-left:-10px;background:#fff;border-radius:10px;padding:6px 6px 8px;box-shadow:0 8px 22px rgba(0,0,0,.14);transform:translateY(var(--y)) rotate(var(--r));transform-origin:50% 120%;text-align:center;animation:drop .8s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--d)*70ms)}
+@keyframes drop{from{opacity:0;transform:translateY(-60px) rotate(0)}}
+.art{height:110px;border-radius:6px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--a),var(--b))}
+.art::before{content:"";position:absolute;left:14%;top:30%;width:22%;height:22%;border-radius:4px;background:rgba(255,255,255,.85);box-shadow:46px 30px 0 rgba(255,255,255,.55)}
+.art::after{content:"";position:absolute;left:30%;top:38%;width:46%;height:2px;background:rgba(255,255,255,.8);transform:rotate(24deg);transform-origin:left}
+.pc b{display:block;font-size:.72rem;line-height:1.2;margin-top:7px}
+.pc small{display:block;font-size:.62rem;color:var(--mute);line-height:1.2}
+.hero h1{font-size:clamp(2.5rem,7.2vw,5.6rem);max-width:12em;margin:0 auto 22px}
+.hero p{max-width:34em;margin:0 auto 30px;font-size:1.1rem;color:#1d2a05}
+.show{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;margin-top:20px}
+.panel{position:relative;border-radius:20px;background:linear-gradient(135deg,#171d26,#0c1015);overflow:hidden;min-height:420px;padding:28px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;position:relative;z-index:1}
+.chips span{padding:8px 16px;border-radius:999px;background:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.chips span:nth-child(odd){background:var(--lime)}
+.panel svg{position:absolute;inset:60px 20px 20px;width:calc(100% - 40px);height:calc(100% - 80px)}
+.panel text{font:600 12px system-ui,sans-serif;fill:#cfd8e3}
+.dash{stroke-dasharray:5 6;animation:dash 1.6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-22}}
+.card2{position:absolute;left:28px;bottom:28px;background:#fff;border-radius:14px;padding:18px 22px;max-width:260px;z-index:1}
+.card2 strong{font-family:var(--serif);font-size:2rem;letter-spacing:-.03em;display:block;line-height:1.1}
+.card2 small{color:var(--mute);line-height:1.4;display:block;margin-top:4px}
+.side{display:grid;gap:20px}
+.box{border-radius:20px;background:#fff;padding:30px}
+.box.lime{background:var(--lime)}
+.steps{list-style:none;padding:0;margin:44px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.steps>li{counter-increment:s;background:#fff;border-radius:16px;padding:26px}
+.steps>li::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--lime);font-weight:800;margin-bottom:18px}
+.steps p{margin:0;color:var(--mute);font-size:.95rem}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:36px}
+.rows{margin-top:40px;border-top:1.5px solid var(--ink)}
+.row{display:grid;grid-template-columns:70px 1fr 1.2fr;gap:20px;padding:26px 0;border-bottom:1px solid #c5cad0;align-items:start;transition:background .2s,padding .2s}
+.row:hover{background:#f6f8f0;padding-left:12px}
+.row .n{font-family:var(--serif);font-weight:800;font-size:1.5rem}
+.row h3{font-size:1.35rem;margin:0}
+.row p{margin:0;color:var(--mute)}
+.row ol{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px 6px;font-size:.78rem;color:#3d4650}
+.row li:not(:last-child)::after{content:"\2192";margin-left:6px}
+.fine{font-size:.92rem;margin-top:24px}
+.dark{background:var(--ink);color:#e9edf2;border-radius:20px;padding:56px}
+.dark .mute{color:#98a3b3}
+.dark h2{color:#fff}
+.tag{display:inline-block;border:1px solid #3a4452;border-radius:999px;padding:4px 14px;font-size:.8rem;color:#a9b4c3;margin-bottom:18px}
+.ex{list-style:none;padding:0;margin:36px 0 0;display:grid;grid-template-columns:repeat(6,1fr);gap:12px;counter-reset:e}
+.ex li{counter-increment:e;background:#1a212b;border-radius:12px;padding:16px;font-size:.9rem}
+.ex li::before{content:counter(e);display:block;color:var(--lime);font-weight:800;margin-bottom:6px}
+.fn{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.fn div{background:#fff;border-radius:16px;padding:28px}
+.fn ul{margin:0;padding-left:1.1em;color:#3d4650}
+.offer{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.offer .box{padding:40px}
+.price{font-family:var(--serif);font-weight:900;font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-.03em;line-height:1.05;margin:0 0 12px}
+.offer ul{padding-left:1.1em;margin:16px 0 0}
+.faq{max-width:840px;margin-top:30px}
+details{border-bottom:1px solid #c5cad0}
+summary{list-style:none;cursor:pointer;padding:20px 44px 20px 0;font-weight:650;position:relative;min-height:48px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:1.6rem;transition:transform .2s}
+details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+details p{margin:0;padding:0 44px 20px 0;color:var(--mute)}
+.cta{border-radius:20px;background:linear-gradient(180deg,#a8e800,#8bd100);text-align:center;padding:90px 28px}
+.cta h2{max-width:13em;margin:0 auto 16px}
+.cta p{max-width:34em;margin:0 auto 26px;color:#1d2a05}
+.cta .em{display:block;margin-top:18px;font-weight:650;word-break:break-all}
+footer{padding:56px 0 36px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;font-size:.95rem}
+.foot img{height:56px;width:auto;margin-bottom:12px}
+.foot a{display:block;padding:4px 0;text-decoration:none;color:#3d4650}
+.foot a:hover{color:var(--ink);text-decoration:underline}
+.copy{margin-top:34px;padding-top:20px;border-top:1px solid #c5cad0;font-size:.85rem;color:var(--mute)}
+@media(max-width:980px){
+ .show,.offer{grid-template-columns:1fr}
+ .steps,.grid4{grid-template-columns:1fr 1fr}
+ .ex{grid-template-columns:1fr 1fr 1fr}
+ .row{grid-template-columns:50px 1fr}.row>div:last-child{grid-column:2}
+ .fn,.foot{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+ .wrap{padding:0 18px}
+ section{padding:56px 0}
+ .bar{height:78px}.bar .logo img{height:38px}
+ .burger{display:block}
+ .nav{display:none;position:absolute;top:78px;left:0;right:0;background:#fff;border-radius:16px;flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 20px;box-shadow:0 14px 30px rgba(0,0,0,.14)}
+ .nav.open{display:flex}
+ .nav a:not(.btn){padding:15px 0;border-bottom:1px solid #e3e6ea}
+ .nav .btn{margin-top:14px}
+ .hero{margin-top:100px;padding:150px 18px 70px}
+ .fan{top:-100px;padding:0 2%}
+ .pc:nth-child(-n+2),.pc:nth-child(n+7){display:none}
+ .pc{flex-basis:25%;margin-left:-6px;padding:4px}
+ .art{height:70px}.pc small{display:none}.pc b{font-size:.6rem}
+ .dark{padding:32px 20px}
+ .panel{min-height:380px}
+ .card2{left:16px;bottom:16px}
+ .box,.offer .box{padding:26px 22px}
+}
+@media(max-width:480px){.steps,.ex,.grid4{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap bar">
+  <a class="logo" href="#top" aria-label="SHIVNOX home"><img src="assets/logo-dark.png" alt="SHIVNOX AI Consultancy — Build Beyond" width="190" height="46"></a>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  <nav class="nav" id="nav" aria-label="Main">
+   <a href="#process">Our Process</a>
+   <a href="#example">Example Workflow</a>
+   <a href="#expertise">Expertise</a>
+   <a href="#contact">Contact</a>
+   <a class="btn" href="#contact">Discuss Your Workflow</a>
+  </nav>
+ </div>
+</header>
+
+<main id="top" class="wrap">
+ <div class="hero">
+  <div class="fan" aria-hidden="true">
+   <div class="pc" style="--r:-21deg;--y:40px;--d:0"><div class="art" style="--a:#3c4a5c;--b:#1b232d"></div><b>Lead Management</b><small>Enquiry routing</small></div>
+   <div class="pc" style="--r:-15deg;--y:18px;--d:1"><div class="art" style="--a:#5a7d86;--b:#2a424a"></div><b>CRM &amp; Data</b><small>Record updates</small></div>
+   <div class="pc" style="--r:-9deg;--y:5px;--d:2"><div class="art" style="--a:#6b7a52;--b:#33401f"></div><b>Documents</b><small>Data extraction</small></div>
+   <div class="pc" style="--r:-3deg;--y:0;--d:3"><div class="art" style="--a:#7d6a55;--b:#3f3226"></div><b>Reporting</b><small>Summaries</small></div>
+   <div class="pc" style="--r:3deg;--y:0;--d:4"><div class="art" style="--a:#46586e;--b:#1e2a38"></div><b>Email Workflows</b><small>Draft &amp; route</small></div>
+   <div class="pc" style="--r:9deg;--y:5px;--d:5"><div class="art" style="--a:#587a73;--b:#26403b"></div><b>Sales &amp; Marketing</b><small>Follow-ups</small></div>
+   <div class="pc" style="--r:15deg;--y:18px;--d:6"><div class="art" style="--a:#6a6f8a;--b:#2e3248"></div><b>Operations</b><small>Handoffs</small></div>
+   <div class="pc" style="--r:21deg;--y:40px;--d:7"><div class="art" style="--a:#7a5f5f;--b:#3d2b2b"></div><b>Customer Service</b><small>Human escalation</small></div>
+  </div>
+  <h1>Less Manual Work. More Room to Grow.</h1>
+  <p>SHIVNOX helps growing businesses streamline repetitive workflows with practical AI and no-code automation, so your team spends less time moving information between tools.</p>
+  <a class="btn" href="#contact">Discuss Your Workflow</a>
+ </div>
+
+ <div class="show">
+  <div class="panel">
+   <div class="chips"><span>Lead Management</span><span>CRM &amp; Data Automation</span><span>Document Handling</span></div>
+   <svg viewBox="0 0 520 300" role="img" aria-label="Illustration: enquiries, documents and spreadsheets flow through an automation step with human review into records, alerts and reports" preserveAspectRatio="xMidYMid meet">
+    <g fill="#10151d" stroke="#2c3546"><rect x="10" y="30" width="110" height="46" rx="8"/><rect x="10" y="120" width="110" height="46" rx="8"/><rect x="10" y="210" width="110" height="46" rx="8"/><rect x="400" y="30" width="110" height="46" rx="8"/><rect x="400" y="120" width="110" height="46" rx="8"/><rect x="400" y="210" width="110" height="46" rx="8"/></g>
+    <g class="dash" stroke="#9fe000" fill="none" stroke-width="1.8"><path d="M120 53C190 53 190 135 224 140"/><path d="M120 143H224"/><path d="M120 233C190 233 190 150 224 146"/><path d="M296 140C330 135 330 53 400 53"/><path d="M296 143H400"/><path d="M296 146C330 150 330 233 400 233"/></g>
+    <rect x="224" y="105" width="72" height="76" rx="14" fill="#1b2a05" stroke="#9fe000" stroke-width="1.8"/>
+    <path d="M244 160l16-28 16 28M250 150h20" stroke="#9fe000" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="65" y="57" text-anchor="middle">Enquiries</text><text x="65" y="147" text-anchor="middle">Documents</text><text x="65" y="237" text-anchor="middle">Spreadsheets</text>
+    <text x="455" y="57" text-anchor="middle">Records</text><text x="455" y="147" text-anchor="middle">Alerts</text><text x="455" y="237" text-anchor="middle">Reports</text>
+    <text x="260" y="205" text-anchor="middle" fill="#8f9bad">Automation + human review</text>
+   </svg>
+   <div class="card2"><strong>Projects from $199</strong><small>Focused, fixed-scope. Final pricing depends on the workflow and agreed scope.</small></div>
+  </div>
+  <div class="side">
+   <div class="box lime"><h3>Who we help</h3><p style="margin:0">Small and mid-sized businesses, agencies, recruiters, professional services firms and e-commerce teams in the US, UK, Canada and Australia.</p></div>
+   <div class="box"><h3>Your team shouldn't do everything manually</h3><p class="mute" style="margin:0">Copying data between apps, sorting enquiries, updating CRM records, extracting details from documents, building recurring reports. Many of these can be simplified by connecting the right tools.</p></div>
+  </div>
+ </div>
+
+ <section id="process">
+  <h2>From Repetitive Process to Practical Automation.</h2>
+  <ol class="steps">
+   <li><h3>Discover</h3><p>Understand the current workflow, the repetitive work involved, and the result the business needs.</p></li>
+   <li><h3>Design</h3><p>Map the process, identify suitable automation opportunities, and agree on tools, deliverables, and scope.</p></li>
+   <li><h3>Build and Test</h3><p>Implement the agreed workflow and test normal cases, errors, and relevant exceptions before handover.</p></li>
+   <li><h3>Hand Over</h3><p>Explain how the workflow operates and clarify documentation, access, ongoing costs, maintenance, and support.</p></li>
+  </ol>
+ </section>
+
+ <section id="expertise" style="padding-top:20px">
+  <h2>Practical Automation. Built Around Your Business.</h2>
+  <div class="rows">
+   <div class="row"><span class="n">01</span><div><h3>Lead Management Automation</h3></div><div><p>Organize incoming enquiries, classify lead information, route requests, and prepare timely follow-ups.</p><ol><li>Enquiry</li><li>Classification</li><li>CRM or sheet</li><li>Sales alert</li><li>Follow-up draft</li></ol></div></div>
+   <div class="row"><span class="n">02</span><div><h3>CRM and Data Automation</h3></div><div><p>Connect compatible tools and streamline record updates, spreadsheet operations, data movement, and handoffs.</p><ol><li>Incoming data</li><li>Validation</li><li>Record update</li><li>Exception alert</li></ol></div></div>
+   <div class="row"><span class="n">03</span><div><h3>AI Document Processing</h3></div><div><p>Extract relevant information from supported documents and emails, organize it into structured records, and flag uncertain results for review.</p><ol><li>Document</li><li>Extraction</li><li>Validation</li><li>Structured record</li></ol></div></div>
+   <div class="row"><span class="n">04</span><div><h3>Reporting and Dashboards</h3></div><div><p>Organize information from compatible systems into useful summaries, recurring reports, and clearer operational views.</p><ol><li>Business data</li><li>Processing</li><li>Summary</li><li>Report or dashboard</li></ol></div></div>
+   <div class="row"><span class="n">05</span><div><h3>Email and Customer Workflows</h3></div><div><p>Classify incoming messages, prepare response drafts, and route requests to the right team member.</p><ol><li>Message</li><li>Classification</li><li>Draft</li><li>Human review</li><li>Task or alert</li></ol></div></div>
+  </div>
+  <p class="fine mute">Integrations are possible only where the tools and access permissions support them, and some work may need custom configuration. Not every workflow suits full automation.</p>
+  <div class="fn">
+   <div><h3>Sales and Marketing</h3><ul><li>Organizing incoming leads</li><li>Routing enquiries</li><li>Follow-up drafts</li><li>Fewer repetitive CRM updates</li><li>Campaign and lead reports</li></ul></div>
+   <div><h3>Operations</h3><ul><li>Organizing documents</li><li>Moving data between systems</li><li>Recurring admin tasks</li><li>Structured reports</li><li>Flagging missing data</li></ul></div>
+   <div><h3>Customer Service</h3><ul><li>Categorizing enquiries</li><li>Suggested responses</li><li>Routing requests</li><li>Organizing support information</li><li>Escalating uncertain requests</li></ul></div>
+  </div>
+ </section>
+
+ <section id="example" style="padding-top:20px">
+  <div class="dark">
+   <span class="tag">Illustrative workflow, not a client project</span>
+   <h2>See How a Workflow Could Work.</h2>
+   <p class="mute">Example: automated lead intake and follow-up preparation.</p>
+   <ol class="ex">
+    <li>A prospect submits a website enquiry.</li>
+    <li>The workflow receives the information.</li>
+    <li>AI classifies the enquiry and extracts relevant fields.</li>
+    <li>Details are added to a CRM or spreadsheet.</li>
+    <li>A salesperson receives a notification.</li>
+    <li>A suggested follow-up is prepared for review.</li>
+   </ol>
+  </div>
+ </section>
+
+ <section id="offer" style="padding-top:20px">
+  <div class="offer">
+   <div class="box">
+    <h3 class="mute">Start with one workflow</h3>
+    <h2>Your First Workflow Automation.</h2>
+    <p class="mute">You don't need to rebuild your business to start. Begin with one clearly defined process and a practical solution around the tools you already use.</p>
+    <ul><li>Initial workflow discovery</li><li>A proposed automation design</li><li>Implementation of the agreed workflow</li><li>Testing with representative data</li><li>A handover explaining how to operate it</li></ul>
+   </div>
+   <div class="box lime" style="display:flex;flex-direction:column;justify-content:center">
+    <p class="price">Projects from $199</p>
+    <p>Final pricing and delivery timing depend on the workflow, required integrations, complexity, access requirements, and agreed scope.</p>
+    <p>Tell us what your team repeats every day. We'll discuss whether a focused automation makes sense for your business.</p>
+    <a class="btn" href="#contact" style="align-self:flex-start">Discuss Your Workflow</a>
+   </div>
+  </div>
+ </section>
+
+ <section id="why" style="padding-top:20px">
+  <h2>Business Thinking First. Technology Second.</h2>
+  <div class="grid4">
+   <div class="box"><h3>Outcome-focused</h3><p class="mute" style="margin:0">Start with the operational problem, not the AI tool.</p></div>
+   <div class="box"><h3>Right-sized</h3><p class="mute" style="margin:0">The simplest practical approach that meets the agreed requirements.</p></div>
+   <div class="box"><h3>Built around your tools</h3><p class="mute" style="margin:0">Where feasible, connect what you already use instead of replacing it.</p></div>
+   <div class="box"><h3>Clear scope and handover</h3><p class="mute" style="margin:0">Agree what is delivered, test it, and clarify how you maintain it.</p></div>
+  </div>
+  <div class="box" style="margin-top:20px"><h3>Automation designed with oversight</h3><p class="mute" style="margin:0">We request only the access the workflow needs, minimize client data during development and testing, prefer representative or anonymized test data, include human review for uncertain or consequential AI output, clarify external tool costs, and agree ownership, credentials and permissions at handover.</p></div>
+ </section>
+
+ <section id="faq" style="padding-top:20px">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq">
+   <details><summary>What types of workflows can SHIVNOX automate?</summary><p>Potential applications include lead management, data processing, document handling, reporting, and routine communication workflows. Suitability depends on your process, existing tools, and requirements.</p></details>
+   <details><summary>Do we need to replace our existing software?</summary><p>Not necessarily. We first evaluate your current tools and determine whether a practical integration or workflow automation is feasible.</p></details>
+   <details><summary>How much does an automation project cost?</summary><p>Focused projects start at $199. The final price depends on the agreed scope, complexity, integrations, and testing requirements.</p></details>
+   <details><summary>How long does implementation take?</summary><p>Timing depends on the workflow, access, integrations, and testing requirements. We confirm a realistic timeline after understanding the scope.</p></details>
+   <details><summary>Does AI make decisions without human involvement?</summary><p>Automation can include human review and approval points, especially for uncertain, sensitive, or consequential outputs. The design depends on the process.</p></details>
+   <details><summary>What happens after handover?</summary><p>Documentation, monitoring, maintenance, hosting, third-party usage costs, and further improvements are discussed according to the project and agreed separately.</p></details>
+   <details><summary>What do you need to begin?</summary><p>Explain one repetitive task, which tools your team uses, and what you would like to improve. We can then discuss an appropriate next step.</p></details>
+  </div>
+ </section>
+
+ <section id="contact" style="padding-top:20px">
+  <div class="cta">
+   <h2>Let's Find the Right Workflow to Automate.</h2>
+   <p>Tell us about a repetitive task, a process bottleneck, or a workflow your team wants to improve. We'll start with the business problem and explore a practical next step.</p>
+   <a class="btn" href="mailto:shivnox.ai@gmail.com?subject=AI%20Workflow%20Consultation">Email SHIVNOX</a>
+   <a class="em" href="mailto:shivnox.ai@gmail.com?subject=AI%20Workflow%20Consultation">shivnox.ai@gmail.com</a>
+  </div>
+ </section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="foot">
+   <div><img src="assets/logo-dark.png" alt="SHIVNOX AI Consultancy — Build Beyond" width="230" height="56"><p class="mute">Practical AI automation for business workflows.</p></div>
+   <nav aria-label="Footer"><a href="#process">Our Process</a><a href="#example">Example Workflow</a><a href="#expertise">Expertise</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+   <div><a href="mailto:shivnox.ai@gmail.com?subject=AI%20Workflow%20Consultation">shivnox.ai@gmail.com</a></div>
+  </div>
+  <p class="copy">&copy; <span id="yr">2026</span> SHIVNOX. All rights reserved.</p>
+ </div>
+</footer>
+<script>
+(function(){var b=document.getElementById('burger'),n=document.getElementById('nav');
+function s(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')}
+b.addEventListener('click',function(){s(!n.classList.contains('open'))});
+n.addEventListener('click',function(e){if(e.target.tagName==='A')s(false)});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')s(false)});
+document.getElementById('yr').textContent=new Date().getFullYear();})();
+</script>
+</body>
+</html>
